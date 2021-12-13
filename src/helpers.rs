@@ -193,6 +193,11 @@ impl Header {
         self.0.value.to_string()
     }
 
+    pub fn value_as_vec(&self) -> Vec<u8> {
+        let bytes: &[u8] = self.0.value.into();
+        bytes.to_vec()
+    }
+
     pub fn into_inner(self) -> ngx_table_elt_t {
         self.0
     }
